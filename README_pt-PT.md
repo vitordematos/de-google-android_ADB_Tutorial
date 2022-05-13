@@ -1,42 +1,42 @@
-# How to de-googlize, increase the security and improve the privacy and usability of the Asus Zenfone via ADB
+# Como desgooglizar, aumentar a segurança e melhorar a privacidade e a usabilidade do Asus Zenfone via ADB
 
-In this article we will learn how to *de-googlize* the smartphone and uninstall all the *bloatware* that ships from factory without compromising device functionality. For this we will use the ADB command (android debug bridge) in Linux.
-When we buy an android smart-phone, in theory we get a Swiss army knife for everyday life, but in practice, as we buy it from *consumer electronics* the device comes with so many *trackers* from  factory that we will never be able to take advantage of its full potential unless we make some changes. As the firms that produce them continue to prioritize not user experience and freedom, but rather the *targeted advertising* model that forces tracking of user behaviour, the myriad of trackers that this option entails slows down the device and makes it harder to use, often forcing the device to consume more memory, more battery and, should we decide to take action to counter this abusive behaviour, using *disable* or *freeze*, causing *loops* that will hinder network access. The only option is to prevent those apps from running without our consent, thus ceasing to compete with the apps we intend to use. Because these are system-level apps, *Uninstall* is the only effective command to stop them. We can then get rid of those .apk that only serve third party interests, doing nothing for the user-purchaser, who is the one who has the legitimate right to use the device as and only as he wishes. In order to enjoy the Swiss Army Knife for which we gave up our money, we have to clean the device we just bought! Yes it is the sad truth. We can pay more for *more* factory clean alternatives like [Volla Phone](https://volla.online/en/) or [Murena Fairphone 3+ - eSolutions - deGoogled phones and services](https://esolutions.shop/shop/murena-fairphone-3-plus-fr/) or else clean the phone ourselves via adb. Just follow this manual.
+Neste artigo vamos aprender a *desgooglizar* o smartphone e a desinstalar todo o *bloatware* que vem de fábrica sem comprometer funcionalidades do dispositivo. Para isso utilizaremos o comando ADB (android debug bridge) no Linux.
+Quando compramos um smart-phone android, em teoria ficamos com um canivete suíço para o dia-a-dia, mas na prática, como o compramos à *electrónica de consumo* o dispositivo traz tantos *trackers* de fábrica que nunca conseguiremos tirar partido do seu máximo potencial a menos que façamos algumas alterações. Como as firmas que os produzem continuam a priorizar não a experiência e a liberdade do utilizador, mas antes o modelo de *publicidade direccionada* que obriga ao rastreamento do comportamento dos utilizadores, a miríade de trackers que essa opção acarreta, torna o dispositivo lento e a sua utilização exasperante, frequentemente obrigando o dispositivo a consumir mais memória, mais bateria e, caso decidamos tomar medidas para contrariar esse comportamento abusivo, usando *disable* ou *freeze*, causando *loops* que dificultarão o acesso à rede. A única opção é impedir que essas apps sejam executadas sem o nosso consentimento, deixando assim de competir com as apps que pretendemos usar. Porque se trata de apps instaladas a nível do sistema, *Uninstall* é o único comando eficaz para as parar. Podemos então ver-mo-nos livres desses .apk que apenas servem interesses de terceiros, não fazendo nada pelo utilizador-comprador, que é quem detém o legítimo direito de utilizar-se do dispositivo como e apenas como entender. Para usufruirmos do canivete suíço por cuja expectativa prescindimos do nosso dinheiro temos de limpar o dispositivo que acabámos de comprar! Sim é a triste verdade. Podemos pagar mais por alternativas *mais* limpas de fábrica como o [Volla Phone](https://volla.online/en/) ou o [Murena Fairphone 3+ – eSolutions – deGoogled phones and services](https://esolutions.shop/shop/murena-fairphone-3-plus-fr/) ou então limpar nós próprios o telefone via adb. Basta seguir este manual.
 
-Pre-requisites: when you first turn on your phone you must not have any SIM card with data plan or memory card inserted in your device and, despite the Google app asking us to do so, you must not allow your device to connect to any networks. And, of course, we must not enter any kind of credentials or phone number into any *system* app. Not clicking *yes* nor *accepting* nor *agreeing* to any questions the Google app asks us. Just keep saying *no* and *set "later "* until we can exit the app. Close the application.
-To access the developer tools that are *hidden* in android go to *settings* > *about* > *software information* > and repeatedly click *build number* seven times. You'll get a *toast* message saying *"congratulations! You are now a programmer "*. From there on the second-to-last entry in the *settings* should read *developer options*. So let's get to it!
+Requisitos prévios: ao ligar o telefone pela primeira vez não devemos ter qualquer cartão SIM com plano de dados ou cartão de memória inserido no dispositivo e, apesar da app Google nos pedir isso, não devemos permitir que o dispositivo se ligue a quaisquer redes. E, claro, não devemos introduzir nenhum tipo de credenciais ou número de telefone em app alguma *de sistema*. Não clicar *sim* nem *aceito* nem *concordo* com quaisquer perguntas que a aplicação Google nos faça. Vamos dizendo *não* e *configurar "mais tarde"* até que consigamos sair da aplicação. Fechar a aplicação.
+Para ter acesso às ferramentas de programador que estão *escondidas* no android ir até *settings* &gt; *about* &gt; *software information* &gt; e clicar repetidamente sete vezes em *build number*. Receberemos uma mensagem *toast* a dizer *"congratulations! You are now a programmer"*. A partir daí na ante-penúltima entrada das *settings* deveremos ler *developer options*. Então vamos lá!
 
-1. On the phone, enable *usb debugging* in the > *settings* > *developer options*. It is also advisable to select *stay awake*. In my case I opened the [appManager](https://github.com/MuntashirAkon/AppManager), searched for the app to uninstall and kept the app open to verify that by running the adb command on the pc, the app *disappeared* effectively from the smartphone screen (it was no longer available to user 0).
-2. In Linux open the terminal, in the case of Kubuntu, open Konsole (CTL+ALT+T) and type ```adb devices``` which returns on the first line ```* deamon started successfully``` and on another line an 8 digit *string* with the serial number of the device.
-3. To uninstall the .apk itself you must type the command ``adb shell pm uninstall --user 0 (.apk name)``. For example, to uninstall google assist type ``adb shell pm uninstall --user 0 com.google.android.googlequickserchbox``. The command returns on the line below the word "Success". In reality the .apk is still there but it is not available to user 0 (that's us) and therefore will not be executable. 
+1. No telefone, habilitar o *usb debugging* nas > *settings* > *developper options*. É aconselhável também seleccionar o *stay awake*. No meu caso abri a [appManager](https://github.com/MuntashirAkon/AppManager), pesquisei pela app a desinstalar e mantive a app aberta para verificar que ao executar o comando adb no pc, a app *desaparecia* efectivamente do ecrã do smartphone (deixava de estar disponível para o utilizador 0).
+2. No Linux abrir a linha de comandos, no caso do Kubuntu, o Konsole e digitar ```adb devices``` que devolve na primeira linha ```* deamon started successfully``` e noutra linha uma *string* de 8 dígitos com o número de série do dispositivo.
+3. Para desinstalar os .apk propriamente ditos há que digitar o comando ```adb shell pm uninstall --user 0 (.apk name)```. Por exemplo, para desinstalar o google assist digitar ```adb shell pm uninstall --user 0 com.google.android.googlequickserchbox```. O comando devolve na linha abaixo a palavra "Success". Na realidade o .apk continua lá mas não fica disponível para o utilizador 0 (que somos nós) e portanto não será executável. 
 
-### What if we need to reinstall some of those apps?
+### E se precisarmos de reinstalar algumas dessas apps?
 
-The uninstall can be reversed with the *install r* command. First we need to find the location of the install file (the .apk). Just type ```adb shell pm dump com.google.android.<app-name> | grep Path``` which returns the path of the .apk and then we can reinstall it by typing ```adb shell pm install -r --user 0 /absolute/path/to/file/app-name_v0.0.0.apk (pseudo code)```. For example, if we want to continue to be able to install / uninstall / reinstall .apks from within the phone itself we have to reinstall one of the apps that are in the list below. First, we have to search for it by typing *adb shell pm dump com.google.android.packageinstaller | grep Path* which returns these two lines:
+A desinstalação pode ser revertida com o comando _install r_. Primeiro temos de encontrar a localização do ficheiro de instalação (o .apk). Para isso digitamos ```adb shell pm dump com.google.android.<nome-da-app> | grep Path``` que devolve o caminho do .apk e depois pode-se reinstalá-lo digitando ```adb shell pm install -r --user 0 /absolute/path/to/file/nome_da_app_v0.0.0.apk (pseudo code)```. Exemplicando, se quisermos continuar a poder instalar / desinstalar / reinstalar .apks a partir do próprio telefone temos de reinstalar uma das apps que estão na lista abaixo. Primeiro, temos de a procurar digitando *adb shell pm dump com.google.android.packageinstaller | grep Path* que devolve estas duas linhas:
 ```
       codePath=/system/priv-app/GooglePackageInstaller
       resourcePath=/system/priv-app/GooglePackageInstaller
 ```
-to reinstall we type *adb shell pm install -r --user 0 /system/priv-app/GooglePackageInstaller* which returns:
+para reinstalar digitamos *adb shell pm install -r --user 0 /system/priv-app/GooglePackageInstaller* que devolve:
 ```
-/com.google.android.packgeinstaller-1.apk pkg: /system/priv-app/GooglePackageInstaller
+/com.google.android.packgeinstaller-1.apk       pkg: /system/priv-app/GooglePackageInstaller
 Success
 ```
 
-### List (with comments) of the 49 *.apk* to uninstall (.apk that contain trackers and can be replaced by better apps) and other useful commands
+### Lista (comentada) dos 49 *.apk* a desinstalar (.apk que contêm trackers e podem ser substituídos por apps melhores) e de comandos úteis
 
 ```
-  adb devices //initialize communication with the device
-  adb --help //help on all adb commands
-  adb shell pm list permission-groups //view device permission groups
-  adb shell pm list users //list users on the device
-  adb shell pm get-install-location //see where apk is being installed
-  adb shell pm list packages // list all apk installed for the user
-  //commands for all .apk to uninstall (with some comments). Upon pressing ENTER and executing each command below, the program should return "Success":
+  adb devices //inicializa a comunicação com o dispositivo
+  adb --help //ver ajuda sobre todos os comandos adb
+  adb shell pm list permission-groups //ver grupos de permissões do dispositivo
+  adb shell pm list users //listar utilizadores do dispositivo
+  adb shell pm get-install-location //ver onde é que os apk estão a ser instalados
+  adb shell pm list packages // lista todos os apk instalados para o utilizador
+  //comandos para todos os .apk a desinstalar (com alguns comentários). Ao premir ENTER e executar cada comando abaixo, o programa deverá devolver "Sucess":
    adb shell pm uninstall --user 0 com.google.android.onetimeinitializer
-   adb shell pm uninstall --user 0 com.google.android.googlequicksearchbox //the google assistant that's always listening
-   adb shell pm uninstall --user 0 com.google.android.marvin.talkback //the one that lets google listen to you
-   adb shell pm uninstall --user 0 com.google.android.syncadapters.contacts //sends your contacts to google
+   adb shell pm uninstall --user 0 com.google.android.googlequicksearchbox //o google assist que está sempre à escuta
+   adb shell pm uninstall --user 0 com.google.android.marvin.talkback //o que permite que a google te ouça
+   adb shell pm uninstall --user 0 com.google.android.syncadapters.contacts //envia os teus contactos para a google
    adb shell pm uninstall --user 0 com.google.android.apps.messaging
    adb shell pm uninstall --user 0 com.google.android.apps.docs
    adb shell pm uninstall --user 0 com.google.android.gsf.login
@@ -59,15 +59,15 @@ Success
    adb shell pm uninstall --user 0 com.google.android.tts
    adb shell pm uninstall --user 0 com.google.android.configupdater
    adb shell pm uninstall --user 0 com.google.android.partnersetup
-   adb shell pm uninstall --user 0 com.google.android.packageinstaller //!Warning this is the app that allows you to manage .apks directly on android. See above how to reinstall it in case we need to manage apps without adb access. It has no trackers so we may not uninstall this one!
+   adb shell pm uninstall --user 0 com.google.android.packageinstaller //!Atenção esta é a app que permite gerir .apks directamente no android. Ver acima como a reinstalar caso necessitemos de gerir apps sem acesso a adb. Não tem trackers pelo que podemos não desinstalar esta!
    adb shell pm uninstall --user 0 com.google.driveactivator
-   adb shell pm uninstall --user 0 com.android.cellbroadcastreceiver //allow the government via isp to send you propaganda messages
+   adb shell pm uninstall --user 0 com.android.cellbroadcastreceiver //permite que o governo via isp te envie mensagens de propaganda
    adb shell pm uninstall --user 0 com.google.android.backuptransport
    adb shell pm uninstall --user 0 com.android.vending
-   adb shell pm uninstall --user 0 com.amazon.kindle //what is this doing on a phone?
-   adb shell pm uninstall --user 0 com.tripadvisor.tripadvisor //what is this doing on a phone?
-   adb shell pm uninstall --user 0 com.oma.drm //Censorship app which may prevent you from reading file content (not gnu/copyleft compliant and tries to impose copyright censorship)
-   adb shell pm uninstall --user 0 com.asus.dm //tries to download system updates (+-2GB) every time you enable a data connections: resembles a DDOS attack
+   adb shell pm uninstall --user 0 com.amazon.kindle //o que é que isto está a fazer num telefone??
+   adb shell pm uninstall --user 0 com.tripadvisor.tripadvisor //o que é que isto está a fazer num telefone??
+   adb shell pm uninstall --user 0 com.oma.drm //app de censura que te pode impedir de ler conteúdo de ficheiros (não respeita gnu/copyleft e tenta impôr censura escorada no copyright)
+   adb shell pm uninstall --user 0 com.asus.dm //tenta fazer download do sistema (+-2GB) de cada vez que ligas os dados: assemelha-se a um ataque DDOS
    adb shell pm uninstall --user 0 com.ironsource.appcloud.oobe.asus
    adb shell pm uninstall --user 0 com.asus.ia.asusapp
    adb shell pm uninstall --user 0 com.asus.weathertime
@@ -82,18 +82,18 @@ Success
    adb shell pm uninstall --user 0 com.asus.ime
    adb shell pm uninstall --user 0 com.asus.as //asus analytics
    adb shell pm uninstall --user 0 com.asus.contacts.theme.dark
-   adb shell pm uninstall --user 0 com.asus.contacts //allows you to manage SIM contacts (useful if you have to use a dumbphone) but makes your .vcf contacts almost unusable by making *merges* that hide duplicate contacts (and there are alternative apps for managing SIM contacts)
-   adb shell pm uninstall --user 0 com.asus.asusincallui //hi-jacks the dialer app
+   adb shell pm uninstall --user 0 com.asus.contacts //permite gerir contactos SIM (útil se tivermos de usar um dumbphone) mas torna o nosso .vcf de contactos praticamente inutilizável fazendo *merges* que escondem os contactos duplicados (e há apps alternativas para isso)
+   adb shell pm uninstall --user 0 com.asus.asusincallui //faz um hi-jacking do dialer
    adb shell pm uninstall --user 0 com.asus.camera
    adb shell pm uninstall --user 0 com.asus.deskclock
    adb shell pm uninstall --user 0 com.asus.systemupdate
    adb shell pm uninstall --user 0 com.asus.zentalk
-   adb shell pm uninstall --user 0 com.qualcomm.location.XT //to use gps you only need com.qualcomm.location not the XT that keeps running even inside buildings mapping where you are and allowing triangulation plus every time you start gps it asks permission yhus nagging you until you say yes (dark design pattern)
-  adb shell pm trim-caches //delete all applications cache
-  adb shell pm reboot //restart the device
+   adb shell pm uninstall --user 0 com.qualcomm.location.XT //para usares o gps precisas só de com.qualcomm.location essa XT fica sempre em excução mesmo dentro de edifícios mapeando o sítio onde te encontras e permitindo a triangulação além disso de cada vez que inicias o gps ela pede permissão para te chatear até que digas que sim (dark design pattern)
+  adb shell pm trim-caches //apagar a cache das aplicações
+  adb shell pm reboot //reiniciar o dispositivo
 
 ```
-Once the undesirable applications have been removed, they need to be replaced. Here is the list, in alphabetical order, of the **FOSS** apps (source code available for anyone to scrutinize and improve) and **no trackers** to make your phone a user-friendly Swiss army knife:
+Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica aqui a lista, por ordem alfabética, das apps **FOSS** (código-fonte disponível para escrutínio e melhoramentos por qualquer pessoa) e **sem trackers** para tornar o telefone um canivete suíço amigo do utilizador:
 
 ```
 
@@ -241,15 +241,12 @@ Once the undesirable applications have been removed, they need to be replaced. H
 
 List made using [List My Apps](https://search.f-droid.org/?q=de.onyxbits.listmyapps)
 ```
+Uma nota sobre a app de assistência! Desinstalámos a *assist app* da Google por ser demasiado invasiva da nossa privacidade uma vez que ouve e reporta tudo o que dissermos e também tudo o que escrevermos (se a usássemos em conjunto com a aplicação de teclado que vem de fábrica, o nosso histórico de digitação seria também enviado para o fabricante; neste caso a ASUS) com o pretexto de nos «assistir» e «melhorar (err... conhecer!) a experiência do utilizador». Convém pois que a substituamos por uma que tenha a possibilidade de funcionar apenas offline. Uma vez que instalámos o [KISS launcher](https://search.f-droid.org/?q=fr.neamar.kiss) podemos utilizá-lo não como o default launcher (para isso eu uso o [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) mas como *assist app*. Podemos escolher o que queremos que a app encontre para nós: eu disse-lhe para procurar apenas em a) contactos, b) ficheiros e c) aplicações (mas também é possível incluirmos *web search* e escolhermos o motor de busca); fiz também *freeze* à *history* para não aumentar exponencialmente a base de dados da aplicação. Para usar o KISS como app de assistência: ir até *settings* &gt; *apps* &gt; *ícone roda dentada* &gt; *default apps* &gt; *assist app* &gt; e escolher da lista o KISS Launcher.
 
+Agora já podemos inserir os nossos cartões no dispositivo e configurá-lo para as nossas necessidades. A lista acima contempla exaustivamente as funcionalidades de todos os .apks que acabámos de desinstalar, e acrescenta mais algumas funcionalidades respectivas às minhas necessidades pessoais no momento em que escrevi este tutorial; salvaguarda-se que eventualmente algumas pessoas não precisarão de tantas aplicações enquanto que outras precisarão de mais. Os repositórios FOSS estão repletos de boas aplicações que podemos testar.
 
-
-A note about the assistance app! We have uninstalled Google's *assist app* as it is too invasive of one's privacy as it listens and reports everything we say and also everything we type (if we use it together with the factory-shipped keyboard app, our typing history would also be sent to the manufacturer; in this case ASUS) under the pretext of "assisting" us and "improving (err... acknowledge!) the user experience". We should therefore replace it with one that has the possibility to work offline only. Once we have installed the [KISS launcher](https://search.f-droid.org/?q=fr.neamar.kiss) we can use it not as the default launcher (for which I use [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) but as an *assist app*. We can choose what we want the app to find for us: I told it to search only for a) contacts, b) files and c) apps (but it's also possible to include *web search* and choose the search engine); I also keep the *history* *frozen* so as not to exponentially increase the app's database. To use KISS as an assistance app: go to *settings* > *apps* > *icon cogwheel* > *default apps* > *assist app* > and choose KISS Launcher from the list.
-
-Now we can insert our cards into the device and configure it to our needs. The above list exhaustively covers the features of all the .apks we just uninstalled, and adds some more features respective to my personal requirements at the time of writing this tutorial; despite that eventually some people will not require so many apps while others may require more. The FOSS repositories are full of good applications that we can test.
-
-Glossary:
+Glossário:
 * adb = android debug bridge
 * apk = android package
-* shell = command line that communicates with operating system services
+* shell = linha de comandos que comunica com os serviços do sistema operativo
 * pm = package manager
