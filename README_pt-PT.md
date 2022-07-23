@@ -6,7 +6,7 @@ Quando compramos um smart-phone android, em teoria ficamos com um canivete suí�
 Requisitos prévios: ao ligar o telefone pela primeira vez não devemos ter qualquer cartão SIM com plano de dados ou cartão de memória inserido no dispositivo e, apesar da app Google nos pedir isso, não devemos permitir que o dispositivo se ligue a quaisquer redes. E, claro, não devemos introduzir nenhum tipo de credenciais ou número de telefone em app alguma *de sistema*. Não clicar *sim* nem *aceito* nem *concordo* com quaisquer perguntas que a aplicação Google nos faça. Vamos dizendo *não* e *configurar "mais tarde"* até que consigamos sair da aplicação. Fechar a aplicação.
 Para ter acesso às ferramentas de programador que estão *escondidas* no android ir até *settings* &gt; *about* &gt; *software information* &gt; e clicar repetidamente sete vezes em *build number*. Receberemos uma mensagem *toast* a dizer *"congratulations! You are now a programmer"*. A partir daí na ante-penúltima entrada das *settings* deveremos ler *developer options*. Então vamos lá!
 
-1. No telefone, habilitar o *usb debugging* nas > *settings* > *developper options*. É aconselhável também seleccionar o *stay awake*. No meu caso abri a [appManager](https://github.com/MuntashirAkon/AppManager), pesquisei pela app a desinstalar e mantive a app aberta para verificar que ao executar o comando adb no pc, a app *desaparecia* efectivamente do ecrã do smartphone (deixava de estar disponível para o utilizador 0).
+1. No telefone, habilitar o *usb debugging* nas > *settings* > *developper options*. É aconselhável também seleccionar o *stay awake*. No meu caso abri a [appManager](https://muntashirakon.github.io/AppManager/pt-rBR/), pesquisei pela app a desinstalar e mantive a app aberta para poder verificar que ao executar o comando adb no pc, a app *desaparecia* efectivamente do ecrã do smartphone (deixava de estar disponível para o utilizador 0).
 2. No Linux abrir a linha de comandos, no caso do Kubuntu, o Konsole e digitar ```adb devices``` que devolve na primeira linha ```* deamon started successfully``` e noutra linha uma *string* de 8 dígitos com o número de série do dispositivo.
 3. Para desinstalar os .apk propriamente ditos há que digitar o comando ```adb shell pm uninstall --user 0 (.apk name)```. Por exemplo, para desinstalar o google assist digitar ```adb shell pm uninstall --user 0 com.google.android.googlequickserchbox```. O comando devolve na linha abaixo a palavra "Success". Na realidade o .apk continua lá mas não fica disponível para o utilizador 0 (que somos nós) e portanto não será executável. 
 
@@ -23,7 +23,7 @@ para reinstalar digitamos *adb shell pm install -r --user 0 /system/priv-app/Goo
 Success
 ```
 
-### Lista (comentada) dos 49 *.apk* a desinstalar (.apk que contêm trackers e podem ser substituídos por apps melhores) e de comandos úteis. Ressalva-se que este foi o bloatware que encontrei no meu telefone mas a lista varia consoante o dispositivo e o fabricante.
+### Lista (comentada) dos 57 *.apk* a desinstalar (.apk que contêm trackers e podem ser substituídos por apps melhores) e de comandos úteis. Ressalva-se que este foi o bloatware que encontrei no meu telefone mas a lista varia consoante o dispositivo e o fabricante.
 
 ```
   adb devices //inicializa a comunicação com o dispositivo
@@ -79,7 +79,8 @@ Success
    adb shell pm uninstall --user 0 com.asus.easylauncher
    adb shell pm uninstall --user 0 com.asus.filemanager
    adb shell pm uninstall --user 0 com.asus.soundrecorder
-   adb shell pm uninstall --user 0 com.asus.ime
+   adb shell pm uninstall --user 0 com.asus.ime //zenUI keyboard
+   adb shell pm uninstall --user 0 com.asus.keyboard //zenUI keyboard   
    adb shell pm uninstall --user 0 com.asus.as //asus analytics
    adb shell pm uninstall --user 0 com.asus.contacts.theme.dark
    adb shell pm uninstall --user 0 com.asus.contacts //permite gerir contactos SIM (útil se tivermos de usar um dumbphone) mas torna o nosso .vcf de contactos praticamente inutilizável fazendo *merges* que escondem os contactos duplicados (e há apps alternativas para isso)
@@ -93,25 +94,26 @@ Success
   adb shell pm reboot //reiniciar o dispositivo
 
 ```
-Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica aqui a lista, por ordem alfabética, das apps **FOSS** (código-fonte disponível para escrutínio e melhoramentos por qualquer pessoa) e **sem trackers** para tornar o telefone um canivete suíço amigo do utilizador:
-
-```
+Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica aqui a **lista**, por ordem alfabética, das apps **FOSS** (código-fonte disponível para escrutínio e melhoramentos por qualquer pessoa) e **sem trackers** para tornar o telefone um canivete suíço amigo do utilizador:
 
 * [Activity Launcher](https://search.f-droid.org/?q=de.szalkowski.activitylauncher) 
 * [AF Weather](https://search.f-droid.org/?q=net.gitsaibot.af) 
 * [Anstop](https://search.f-droid.org/?q=An.stop) 
+* [APK Explorer & Editor](https://search.f-droid.org/?q=com.apk.editor) 
 * [APK Export](https://apkpure.com/search?q=com.ses.app.apkexport) 
 * [App Lock](https://search.f-droid.org/?q=io.github.subhamtyagi.privacyapplock) 
 * [App Manager](https://search.f-droid.org/?q=io.github.muntashirakon.AppManager) 
 * [Arcticons Dark](https://search.f-droid.org/?q=com.donnnno.arcticons) 
 * [Audio Recorder](https://search.f-droid.org/?q=com.github.axet.audiorecorder) 
-* [Battery Notifier BT Free](https://apkpure.com/search?q=com.larryvgs.battery) 
+* [Auto Off Bluetooth](https://search.f-droid.org/?q=com.mystro256.autooffbluetooth) 
+* [BatteryBot Pro](https://search.f-droid.org/?q=com.darshancomputing.BatteryIndicatorPro) 
 * [BikeComputer](https://search.f-droid.org/?q=de.nulide.bikecomputer) 
 * [Birthday Buddy](https://search.f-droid.org/?q=com.procrastimax.birthdaybuddy) 
 * [BirthDayDroid](https://search.f-droid.org/?q=com.tmendes.birthdaydroid) 
 * [Blacklist Blocker](https://search.f-droid.org/?q=com.kaliturin.blacklist) 
+* [Blockinger](https://search.f-droid.org/?q=org.blockinger.game) 
 * [Boldbeast Recorder](https://apkpure.com/search?q=com.boldbeast.recorder) 
-* [Browsor](https://apkpure.com/search?q=com.trim.web.browser) 
+* [Browsor](https://search.f-droid.org/?q=com.trim.web.browser) 
 * [Bubble](https://search.f-droid.org/?q=org.woheller69.level) 
 * [CalcTastic](https://apkpure.com/search?q=com.shaytasticsoftware.calctasticfree) 
 * [Calendar](https://search.f-droid.org/?q=com.simplemobiletools.calendar.pro) 
@@ -121,61 +123,67 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Camera Color Picker](https://search.f-droid.org/?q=fr.tvbarthel.apps.cameracolorpicker) 
 * [Camera Roll](https://search.f-droid.org/?q=us.koller.cameraroll) 
 * [ChronoSnap](https://search.f-droid.org/?q=com.nathanosman.chronosnap) 
-* [ClassyShark3xodus](https://search.f-droid.org/?q=com.oF2pks.classyshark3xodus) 
 * [Clear List](https://search.f-droid.org/?q=douzifly.list) 
 * [Clima](https://search.f-droid.org/?q=co.prestosole.clima) 
 * [ClipboardCleaner](https://search.f-droid.org/?q=io.github.deweyreed.clipboardcleaner) 
 * [Contacts](https://search.f-droid.org/?q=com.simplemobiletools.contacts.pro) 
-* [Contacts On Desktop](https://apkpure.com/search?q=contacts%20on%20desktop) 
+* [Contacts On Desktop](https://search.f-droid.org/?q=mofo22.tools.contactsondesktop) 
 * [Countdown for DashClock](https://search.f-droid.org/?q=com.cr5315.cfdc) 
 * [Counter](https://search.f-droid.org/?q=me.tsukanov.counter) 
-* [DashClock Battery Extension](https://apkpure.com/dashclock-battery-extension/me.grantland.dashclock_battery) 
+* [DashClock Battery Extension](https://search.f-droid.org/?q=me.grantland.dashclock_battery) 
 * [DashClock Birthday Extension](https://search.f-droid.org/?q=fr.nicopico.dashclock.birthday) 
-* [DashClock custom extension](https://apkpure.com/dashclock-custom-extension/com.fleckdalm.dashclockcustomextension) 
-* [DashClock Device Info Extension](https://apkpure.com/dashclock-deviceinfo-extension/com.pixelus.dashclock.ext.mydevice) 
+* [DashClock custom extension](https://search.f-droid.org/?q=com.fleckdalm.dashclockcustomextension) 
+* [DashClock Device Info Extension](https://search.f-droid.org/?q=com.pixelus.dashclock.ext.mydevice) 
 * [DashClock Disk Space Extension](https://search.f-droid.org/?q=com.pixelus.dashclock.ext.mystorage) 
 * [DashClock Week Number](https://search.f-droid.org/?q=de.jonaskoeritz.android.dashclockweeknumber) 
 * [DashClock Widget](https://search.f-droid.org/?q=net.nurik.roman.dashclock) 
 * [DAVx⁵](https://search.f-droid.org/?q=at.bitfire.davdroid) 
+* [dawdle](https://search.f-droid.org/?q=godau.fynn.moodledirect) 
 * [Dialer](https://search.f-droid.org/?q=com.simplemobiletools.dialer) 
 * [Dicionário Priberam](https://apkpure.com/search?q=pt.priberam.dicionariolinguaportuguesa) 
 * [Disable Manager](https://search.f-droid.org/?q=com.nagopy.android.disablemanager2) 
-* [Document Viewer](https://search.f-droid.org/?q=org.sufficientlysecure.viewer) 
+* [DroidFish](https://search.f-droid.org/?q=org.petero.droidfish) 
 * [Dumbphone Assistant](https://search.f-droid.org/?q=com.github.yeriomin.dumbphoneassistant) 
 * [Editor](https://search.f-droid.org/?q=org.billthefarmer.editor) 
+* [Effects Pro](https://search.f-droid.org/?q=org.appsroid.fxpro) 
 * [Element](https://search.f-droid.org/?q=im.vector.app) 
 * [Emerald Dialer](https://search.f-droid.org/?q=ru.henridellal.dialer) 
+* [Etar](https://search.f-droid.org/?q=ws.xsoh.etar) 
 * [FairEmail](https://search.f-droid.org/?q=eu.faircode.email) 
 * [Fake Contacts](https://search.f-droid.org/?q=me.billdietrich.fake_contacts) 
-* [Falling Blocks](https://search.f-droid.org/?q=de.stefan_oltmann.falling_blocks) 
 * [Feeder](https://search.f-droid.org/?q=com.nononsenseapps.feeder) 
 * [Fennec](https://search.f-droid.org/?q=org.mozilla.fennec_fdroid) 
 * [FillUp](https://search.f-droid.org/?q=com.github.wdkapps.fillup) 
-* [ForRunners](https://search.f-droid.org/?q=net.khertan.forrunners) 
 * [Foxy Droid](https://search.f-droid.org/?q=nya.kitsunyan.foxydroid) 
 * [Fritter](https://search.f-droid.org/?q=com.jonjomckay.fritter) 
 * [GCompris](https://search.f-droid.org/?q=net.gcompris.full) 
+* [Ghost Commander](https://search.f-droid.org/?q=com.ghostsq.commander) 
+* [Ghost Commander - SFTP plugin (new)](https://search.f-droid.org/?q=com.ghostsq.commander.sftp) 
+* [Ghost Commander - SMB plugin](https://search.f-droid.org/?q=com.ghostsq.commander.smb) 
+* [Hacker's Keyboard](https://search.f-droid.org/?q=org.pocketworkstation.pckeyboard) 
 * [Hourly Reminder](https://search.f-droid.org/?q=com.github.axet.hourlyreminder) 
 * [Identiconizer!](https://search.f-droid.org/?q=com.germainz.identiconizer) 
 * [JABtalk](https://apt.izzysoft.de/fdroid/index/apk/com.jabstone.jabtalk.basic) 
-* [JustChess](https://search.f-droid.org/?q=com.alaskalinuxuser.justchess) 
 * [KDE Connect](https://search.f-droid.org/?q=org.kde.kdeconnect_tp) 
 * [KeePassDX](https://search.f-droid.org/?q=com.kunzisoft.keepass.libre) 
-* [Kids Solar Explorer](https://search.f-droid.org/?q=com.apesoup.KidsSolarExplorer) 
+* [Keyboard Switcher](https://search.f-droid.org/?q=com.kunzisoft.keyboard.switcher) 
+* [Kids Solar Explorer](https://apkpure.com/search?q=com.apesoup.KidsSolarExplorer) 
 * [KISS launcher](https://search.f-droid.org/?q=fr.neamar.kiss) 
 * [LastCaller](https://search.f-droid.org/?q=com.dwak.lastcall) 
 * [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) 
 * [LibGen](https://search.f-droid.org/?q=com.manuelvargastapia.libgen) 
+* [Librera PRO](https://search.f-droid.org/?q=com.foobnix.pro.pdf.reader) 
 * [List My Apps](https://search.f-droid.org/?q=de.onyxbits.listmyapps) 
 * [Lockeye](https://apkpure.com/search?q=com.tafayor.lockeye2) 
 * [LTE Cleaner](https://search.f-droid.org/?q=theredspy15.ltecleanerfoss) 
+* [Ludo](https://search.f-droid.org/?q=org.secuso.privacyfriendlyludo) 
 * [Markers](https://search.f-droid.org/?q=org.dsandler.apps.markers) 
 * [Material Files](https://search.f-droid.org/?q=me.zhanghai.android.files) 
 * [Material Tea Timer](https://search.f-droid.org/?q=org.ligi.materialteatimer) 
 * [MidiSheetMusic](https://search.f-droid.org/?q=com.midisheetmusic) 
 * [MSnake](https://search.f-droid.org/?q=com.fgrim.msnake) 
 * [My Contacts](https://search.f-droid.org/?q=community.fairphone.mycontacts) 
-* [Natural Hour](https://github.com/forrestguice/NaturalHour/releases) 
+* [Natural Hour](https://github.com/forrestguice/NaturalHour/releases/tag/v0.2.0) 
 * [Nekogram X](https://search.f-droid.org/?q=nekox.messenger) 
 * [Net Monitor](https://search.f-droid.org/?q=org.secuso.privacyfriendlynetmonitor) 
 * [Night Screen](https://search.f-droid.org/?q=info.papdt.blackblub) 
@@ -199,25 +207,28 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Password Generator](https://search.f-droid.org/?q=com.vecturagames.android.app.passwordgenerator) 
 * [PDF Converter](https://search.f-droid.org/?q=swati4star.createpdf) 
 * [PilferShush Jammer](https://search.f-droid.org/?q=cityfreqs.com.pilfershushjammer) 
-* [QR & Barcode Scanner](https://search.f-droid.org/?q=com.example.barcodescanner) 
+* [Pluvia](https://search.f-droid.org/?q=com.spicychair.weather) 
+* [QR Scanner](https://search.f-droid.org/?q=com.secuso.privacyFriendlyCodeScanner) 
 * [Radian Degree Converter Calc](https://search.f-droid.org/?q=theteendevs.radiandegreeconvertercalc) 
 * [RadioDroid](https://search.f-droid.org/?q=net.programmierecke.radiodroid2) 
-* [RAR](https://www.rarlab.com/download.htm) 
+* [RAR](https://apkpure.com/search?q=com.rarlab.rar) 
 * [Retroboy](https://search.f-droid.org/?q=se.embargo.retroboy) 
 * [RHVoice](https://search.f-droid.org/?q=com.github.olga_yakovleva.rhvoice.android) 
 * [Rule of Three](https://search.f-droid.org/?q=de.steinpfeffer.rdt) 
 * [RxDroid](https://search.f-droid.org/?q=at.jclehner.rxdroid) 
 * [ScreenCam](https://search.f-droid.org/?q=com.orpheusdroid.screenrecorder) 
-* [Screenshot Blocker](https://apkpure.com/screenshot-blocker-prevent-screenshots/com.tafayor.screenshotblocker) 
+* [Screenshot Blocker](https://apkpure.com/search?q=com.tafayor.screenshotblocker) 
+* [SecScanQR](https://search.f-droid.org/?q=de.t_dankworth.secscanqr) 
 * [Semitone](https://search.f-droid.org/?q=mn.tck.semitone) 
+* [Sentry](https://search.f-droid.org/?q=me.lucky.sentry) 
 * [Shortcuts for Calendar/Contacts](https://search.f-droid.org/?q=org.shortcuts) 
 * [Silence](https://search.f-droid.org/?q=org.smssecure.smssecure) 
 * [Simple Keyboard](https://search.f-droid.org/?q=rkr.simplekeyboard.inputmethod) 
-* [SkyTube Extra](https://apt.izzysoft.de/fdroid/index/apk/free.rm.skytube.extra) 
+* [SkyTube Extra](https://search.f-droid.org/?q=free.rm.skytube.extra) 
 * [Solar Compass](https://search.f-droid.org/?q=com.agnibho.android.solarcompass) 
-* [Solunar Periods](https://github.com/forrestguice/SolunarPeriods/releases) 
+* [Solunar Periods](https://github.com/forrestguice/SolunarPeriods/releases/tag/v0.2.0) 
 * [Sound Recorder](https://search.f-droid.org/?q=net.micode.soundrecorder) 
-* [SpeedCrunch](https://search.f-droid.org/?q=org.syrja.speedcrunch) 
+* [SpeedCrunch](https://github.com/mikkosyrja/speedcrunch-android/releases/tag/0.4.2) 
 * [Stellarium](https://search.f-droid.org/?q=com.noctuasoftware.stellarium_free) 
 * [Stopwatch](https://search.f-droid.org/?q=com.keuwl.stopwatch) 
 * [Stopwatch](https://search.f-droid.org/?q=com.kodarkooperativet.notificationstopwatch) 
@@ -227,7 +238,7 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Tic Tac Toe](https://search.f-droid.org/?q=com.earthblood.tictactoe) 
 * [Time Calc](https://search.f-droid.org/?q=com.noxproductions.TimeCalc) 
 * [TimeTable](https://search.f-droid.org/?q=com.asdoi.timetable) 
-* [Tor Browser](https://search.f-droid.org/?q=org.torproject.torbrowser) 
+* [Tor Browser](https://apkpure.com/search?q=org.torproject.torbrowser) 
 * [Trail Sense](https://search.f-droid.org/?q=com.kylecorry.trail_sense) 
 * [TTS Util](https://search.f-droid.org/?q=com.danefinlay.ttsutil) 
 * [Vector Pinball](https://search.f-droid.org/?q=com.dozingcatsoftware.bouncy) 
@@ -236,15 +247,33 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [WateryDroid](https://search.f-droid.org/?q=tmendes.com.waterydroid) 
 * [Wi-Fi Privacy Police](https://search.f-droid.org/?q=be.uhasselt.privacypolice) 
 * [Wi-Fi Widget](https://search.f-droid.org/?q=org.androidappdev.wifiwidget) 
-* [World Clock & Weather](https://search.f-droid.org/?q=ch.corten.aha.worldclock) 
-* [World Weather](https://search.f-droid.org/?q=com.haringeymobile.ukweather) 
+* [WiFi Warning](https://search.f-droid.org/?q=nu.firetech.android.wifiwarning) 
 
-List made using [List My Apps](https://search.f-droid.org/?q=de.onyxbits.listmyapps)
-```
+List made using [List My Apps](https://play.google.com/store/apps/details?id=de.onyxbits.listmyapps)
+
 
 Uma nota sobre a app de assistência! Desinstalámos a *assist app* da Google por ser demasiado invasiva da nossa privacidade uma vez que ouve e reporta tudo o que dissermos e também tudo o que escrevermos (se a usássemos em conjunto com a aplicação de teclado que vem de fábrica, o nosso histórico de digitação seria também enviado para o fabricante; neste caso a ASUS) com o pretexto de nos «assistir» e «melhorar (err... conhecer!) a experiência do utilizador». Convém pois que a substituamos por uma que tenha a possibilidade de funcionar apenas offline. Uma vez que instalámos o [KISS launcher](https://search.f-droid.org/?q=fr.neamar.kiss) podemos utilizá-lo não como o default launcher (para isso eu uso o [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) mas como *assist app*. Podemos escolher o que queremos que a app encontre para nós: eu disse-lhe para procurar apenas em a) contacts, b) device settings e c) shortcuts (mas também é possível incluirmos *web search providers* e escolhermos o motor de busca); fiz também *freeze* à *history* para não aumentar exponencialmente a base de dados da aplicação. Para usar o KISS como app de assistência: ir até *settings* &gt; *apps* &gt; *ícone roda dentada* &gt; *default apps* &gt; *assist app* &gt; e escolher da lista o KISS Launcher.
 
 Agora já podemos inserir os nossos cartões no dispositivo e configurá-lo para as nossas necessidades. A lista acima contempla exaustivamente as funcionalidades de todos os .apks que acabámos de desinstalar, e acrescenta mais algumas funcionalidades respectivas às minhas necessidades pessoais no momento em que escrevi este tutorial; salvaguarda-se que eventualmente algumas pessoas não precisarão de tantas aplicações enquanto que outras precisarão de mais. Os repositórios FOSS estão repletos de boas aplicações que podemos testar.
+
+### Como saber quais as aplicações que devemos remover?
+
+Primeiro precisamos de compreender que aplicações no nosso dispositivo têm localizadores e nas quais, por essa razão, não devemos confiar. Tanto a [appManager](https://search.f-droid.org/?q=AppManager&lang=en) como a [ClassyShark3xodus](https://search.f-droid.org/?lang=en&q=classyshark) varrem o sistema expondo todos os rastreadores existentes. Ambas são fiáveis, pois ambas utilizam a base de dados da ExodusPrivacy.
+
+### Onde obter software alternativo e de confiança?
+
+Podemos navegar na web ou podemos instalar o [Foxy Droid](https://search.f-droid.org/?q=nya.kitsunyan.foxydroid) para gerirmos os nossos repositórios, as nossas aplicações e as nossas actualizações.
+
+Aqui está a lista dos repositórios que devemos habilitar no *foxydroid* e os seus equivalentes na web.
+
+| * R E P O S *  | * W E B * |
+| ------------- | ------------- |
+| https://f-droid.org/repo | https://f-droid.org/en/packages/ |
+| https://f-droid.org/archive | https://f-droid.org/en/packages |
+| https://guardianproject.info/fdroid/repo | https://guardianproject.info/ |
+| https://guardianproject.info/fdroid/archive | https://guardianproject.info/ |
+| https://apt.izzysoft.de/fdroid/repo | https://apt.izzysoft.de/fdroid/ |
+| https://cdn.kde.org/android/fdroid/repo | https://cdn.kde.org/android/fdroid/repo/ |
 
 Glossário:
 * adb = android debug bridge
