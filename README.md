@@ -94,6 +94,9 @@ Success
   adb shell pm reboot //restart the device
 
 ```
+
+### ☞ Replacement apps list
+
 Once the undesirable applications have been removed, they need to be replaced. Here is **the list**, in alphabetical order, of the **FOSS** apps (source code available for anyone to scrutinize and improve) and **no trackers** to make your phone a user-friendly Swiss army knife:
 
 * [Activity Launcher](https://search.f-droid.org/?q=de.szalkowski.activitylauncher) 
@@ -252,7 +255,9 @@ Once the undesirable applications have been removed, they need to be replaced. H
 List made using [List My Apps](https://search.f-droid.org/?q=de.onyxbits.listmyapps)
 
 
-A note about the assistance app! We have uninstalled Google's *assist app* as it is too invasive of one's privacy as it listens and reports everything we say and also everything we type (if we use it together with the factory-shipped keyboard app, our typing history would also be sent to the manufacturer; in this case ASUS) under the pretext of "assisting" us and "improving (err... acknowledge!) the user experience". We should therefore replace it with one that has the possibility to work offline only. Once we have installed the [KISS launcher](https://search.f-droid.org/?q=fr.neamar.kiss) we can use it not as the default launcher (for which I use [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) but as an *assist app*. We can choose what we want the app to find for us: I told it to search only for a) contacts, b) device settings and c) shortcuts (but it's also possible to include *web search providers* and choose the search engine); I also keep the *history* *frozen* so as not to exponentially increase the app's database. To use KISS as an assistance app: go to *settings* > *apps* > *icon cogwheel* > *default apps* > *assist app* > and choose KISS Launcher from the list.
+### A note about the assistance app!
+
+We have uninstalled Google's *assist app* as it is too invasive of one's privacy as it listens and reports everything we say and also everything we type (if we use it together with the factory-shipped keyboard app, our typing history would also be sent to the manufacturer; in this case ASUS) under the pretext of "assisting" us and "improving (err... acknowledge!) the user experience". We should therefore replace it with one that has the possibility to work offline only. Once we have installed the [KISS launcher](https://search.f-droid.org/?q=fr.neamar.kiss) we can use it not as the default launcher (for which I use [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) but as an *assist app*. We can choose what we want the app to find for us: I told it to search only for a) contacts, b) device settings and c) shortcuts (but it's also possible to include *web search providers* and choose the search engine); I also keep the *history* *frozen* so as not to exponentially increase the app's database. To use KISS as an assistance app: go to *settings* > *apps* > *icon cogwheel* > *default apps* > *assist app* > and choose KISS Launcher from the list.
 
 Now we can insert our cards into the device and configure it to our needs. The above list exhaustively covers the features of all the .apks we just uninstalled, and adds some more features respective to my personal requirements at the time of writing this tutorial; despite that eventually some people will not require so many apps while others may require more. The FOSS repositories are full of good applications that we can test.
 
