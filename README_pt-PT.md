@@ -94,6 +94,9 @@ Success
   adb shell pm reboot //reiniciar o dispositivo
 
 ```
+
+### ☞ Lista de aplicações de substituição
+
 Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica aqui a **lista**, por ordem alfabética, das apps **FOSS** (código-fonte disponível para escrutínio e melhoramentos por qualquer pessoa) e **sem trackers** para tornar o telefone um canivete suíço amigo do utilizador:
 
 * [Activity Launcher](https://search.f-droid.org/?q=de.szalkowski.activitylauncher) 
@@ -252,7 +255,9 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 List made using [List My Apps](https://search.f-droid.org/?q=de.onyxbits.listmyapps)
 
 
-Uma nota sobre a app de assistência! Desinstalámos a *assist app* da Google por ser demasiado invasiva da nossa privacidade uma vez que ouve e reporta tudo o que dissermos e também tudo o que escrevermos (se a usássemos em conjunto com a aplicação de teclado que vem de fábrica, o nosso histórico de digitação seria também enviado para o fabricante; neste caso a ASUS) com o pretexto de nos «assistir» e «melhorar (err... conhecer!) a experiência do utilizador». Convém pois que a substituamos por uma que tenha a possibilidade de funcionar apenas offline. Uma vez que instalámos o [KISS launcher](https://search.f-droid.org/?q=fr.neamar.kiss) podemos utilizá-lo não como o default launcher (para isso eu uso o [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) mas como *assist app*. Podemos escolher o que queremos que a app encontre para nós: eu disse-lhe para procurar apenas em a) contacts, b) device settings e c) shortcuts (mas também é possível incluirmos *web search providers* e escolhermos o motor de busca); fiz também *freeze* à *history* para não aumentar exponencialmente a base de dados da aplicação. Para usar o KISS como app de assistência: ir até *settings* &gt; *apps* &gt; *ícone roda dentada* &gt; *default apps* &gt; *assist app* &gt; e escolher da lista o KISS Launcher.
+### Uma nota sobre a app de assistência!
+
+Desinstalámos a *assist app* da Google por ser demasiado invasiva da nossa privacidade uma vez que ouve e reporta tudo o que dissermos e também tudo o que escrevermos (se a usássemos em conjunto com a aplicação de teclado que vem de fábrica, o nosso histórico de digitação seria também enviado para o fabricante; neste caso a ASUS) com o pretexto de nos «assistir» e «melhorar (err... conhecer!) a experiência do utilizador». Convém pois que a substituamos por uma que tenha a possibilidade de funcionar apenas offline. Uma vez que instalámos o [KISS launcher](https://search.f-droid.org/?q=fr.neamar.kiss) podemos utilizá-lo não como o default launcher (para isso eu uso o [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) mas como *assist app*. Podemos escolher o que queremos que a app encontre para nós: eu disse-lhe para procurar apenas em a) contacts, b) device settings e c) shortcuts (mas também é possível incluirmos *web search providers* e escolhermos o motor de busca); fiz também *freeze* à *history* para não aumentar exponencialmente a base de dados da aplicação. Para usar o KISS como app de assistência: ir até *settings* &gt; *apps* &gt; *ícone roda dentada* &gt; *default apps* &gt; *assist app* &gt; e escolher da lista o KISS Launcher.
 
 Agora já podemos inserir os nossos cartões no dispositivo e configurá-lo para as nossas necessidades. A lista acima contempla exaustivamente as funcionalidades de todos os .apks que acabámos de desinstalar, e acrescenta mais algumas funcionalidades respectivas às minhas necessidades pessoais no momento em que escrevi este tutorial; salvaguarda-se que eventualmente algumas pessoas não precisarão de tantas aplicações enquanto que outras precisarão de mais. Os repositórios FOSS estão repletos de boas aplicações que podemos testar.
 
