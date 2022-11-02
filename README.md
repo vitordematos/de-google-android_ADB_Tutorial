@@ -70,6 +70,10 @@ Success
    adb shell pm uninstall --user 0 com.asus.dm //tries to download system updates (+-2GB) every time you enable a data connections: resembles a DDOS attack
    adb shell pm uninstall --user 0 com.ironsource.appcloud.oobe.asus
    adb shell pm uninstall --user 0 com.asus.ia.asusapp
+   adb shell pm uninstall --user 0 com.asus.livedemo
+   adb shell pm uninstall --user 0 com.asus.livedemoservice
+   adb shell pm uninstall --user 0 com.asus.launcher
+   adb shell pm uninstall --user 0 com.asus.server.azs
    adb shell pm uninstall --user 0 com.asus.weathertime
    adb shell pm uninstall --user 0 com.asus.gallery
    adb shell pm uninstall --user 0 com.asus.flashlight
@@ -101,8 +105,6 @@ Once the undesirable applications have been removed, they need to be replaced. H
 
 * [Activity Launcher](https://search.f-droid.org/?q=de.szalkowski.activitylauncher) 
 * [AF Weather](https://search.f-droid.org/?q=net.gitsaibot.af) 
-* [Anstop](https://search.f-droid.org/?q=An.stop) 
-* [APK Explorer & Editor](https://search.f-droid.org/?q=com.apk.editor) 
 * [APK Export](https://apkpure.com/search?q=com.ses.app.apkexport) 
 * [App Lock](https://search.f-droid.org/?q=io.github.subhamtyagi.privacyapplock) 
 * [App Manager](https://search.f-droid.org/?q=io.github.muntashirakon.AppManager) 
@@ -111,6 +113,7 @@ Once the undesirable applications have been removed, they need to be replaced. H
 * [Auto Off Bluetooth](https://search.f-droid.org/?q=com.mystro256.autooffbluetooth) 
 * [BatteryBot Pro](https://search.f-droid.org/?q=com.darshancomputing.BatteryIndicatorPro) 
 * [BikeComputer](https://search.f-droid.org/?q=de.nulide.bikecomputer) 
+* [Birthday Adapter](https://search.f-droid.org/?q=org.birthdayadapter) 
 * [Birthday Buddy](https://search.f-droid.org/?q=com.procrastimax.birthdaybuddy) 
 * [BirthDayDroid](https://search.f-droid.org/?q=com.tmendes.birthdaydroid) 
 * [Blacklist Blocker](https://search.f-droid.org/?q=com.kaliturin.blacklist) 
@@ -129,6 +132,7 @@ Once the undesirable applications have been removed, they need to be replaced. H
 * [Clear List](https://search.f-droid.org/?q=douzifly.list) 
 * [Clima](https://search.f-droid.org/?q=co.prestosole.clima) 
 * [ClipboardCleaner](https://search.f-droid.org/?q=io.github.deweyreed.clipboardcleaner) 
+* [Clock](https://search.f-droid.org/?q=com.best.deskclock) 
 * [Contacts](https://search.f-droid.org/?q=com.simplemobiletools.contacts.pro) 
 * [Contacts On Desktop](https://search.f-droid.org/?q=mofo22.tools.contactsondesktop) 
 * [Countdown for DashClock](https://search.f-droid.org/?q=com.cr5315.cfdc) 
@@ -143,7 +147,6 @@ Once the undesirable applications have been removed, they need to be replaced. H
 * [DAVx⁵](https://search.f-droid.org/?q=at.bitfire.davdroid) 
 * [dawdle](https://search.f-droid.org/?q=godau.fynn.moodledirect) 
 * [Dialer](https://search.f-droid.org/?q=com.simplemobiletools.dialer) 
-* [Dicionário Priberam](https://apkpure.com/search?q=pt.priberam.dicionariolinguaportuguesa) 
 * [Disable Manager](https://search.f-droid.org/?q=com.nagopy.android.disablemanager2) 
 * [DroidFish](https://search.f-droid.org/?q=org.petero.droidfish) 
 * [Dumbphone Assistant](https://search.f-droid.org/?q=com.github.yeriomin.dumbphoneassistant) 
@@ -160,11 +163,7 @@ Once the undesirable applications have been removed, they need to be replaced. H
 * [Foxy Droid](https://search.f-droid.org/?q=nya.kitsunyan.foxydroid) 
 * [Fritter](https://search.f-droid.org/?q=com.jonjomckay.fritter) 
 * [GCompris](https://search.f-droid.org/?q=net.gcompris.full) 
-* [Ghost Commander](https://search.f-droid.org/?q=com.ghostsq.commander) 
-* [Ghost Commander - SFTP plugin (new)](https://search.f-droid.org/?q=com.ghostsq.commander.sftp) 
-* [Ghost Commander - SMB plugin](https://search.f-droid.org/?q=com.ghostsq.commander.smb) 
 * [Hacker's Keyboard](https://search.f-droid.org/?q=org.pocketworkstation.pckeyboard) 
-* [Hourly Reminder](https://search.f-droid.org/?q=com.github.axet.hourlyreminder) 
 * [Identiconizer!](https://search.f-droid.org/?q=com.germainz.identiconizer) 
 * [JABtalk](https://apt.izzysoft.de/fdroid/index/apk/com.jabstone.jabtalk.basic) 
 * [KDE Connect](https://search.f-droid.org/?q=org.kde.kdeconnect_tp) 
@@ -175,6 +174,7 @@ Once the undesirable applications have been removed, they need to be replaced. H
 * [LastCaller](https://search.f-droid.org/?q=com.dwak.lastcall) 
 * [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) 
 * [LibGen](https://search.f-droid.org/?q=com.manuelvargastapia.libgen) 
+* [LibreOffice Viewer](https://search.f-droid.org/?q=org.documentfoundation.libreoffice) 
 * [Librera PRO](https://search.f-droid.org/?q=com.foobnix.pro.pdf.reader) 
 * [List My Apps](https://search.f-droid.org/?q=de.onyxbits.listmyapps) 
 * [Lockeye](https://apkpure.com/search?q=com.tafayor.lockeye2) 
@@ -219,6 +219,7 @@ Once the undesirable applications have been removed, they need to be replaced. H
 * [RHVoice](https://search.f-droid.org/?q=com.github.olga_yakovleva.rhvoice.android) 
 * [Rule of Three](https://search.f-droid.org/?q=de.steinpfeffer.rdt) 
 * [RxDroid](https://search.f-droid.org/?q=at.jclehner.rxdroid) 
+* [Scarlet FDroid](https://search.f-droid.org/?q=com.bijoysingh.quicknote) 
 * [ScreenCam](https://search.f-droid.org/?q=com.orpheusdroid.screenrecorder) 
 * [Screenshot Blocker](https://apkpure.com/search?q=com.tafayor.screenshotblocker) 
 * [SecScanQR](https://search.f-droid.org/?q=de.t_dankworth.secscanqr) 
@@ -227,17 +228,18 @@ Once the undesirable applications have been removed, they need to be replaced. H
 * [Shortcuts for Calendar/Contacts](https://search.f-droid.org/?q=org.shortcuts) 
 * [Silence](https://search.f-droid.org/?q=org.smssecure.smssecure) 
 * [Simple Keyboard](https://search.f-droid.org/?q=rkr.simplekeyboard.inputmethod) 
+* [SimplyTranslate Mobile ](https://search.f-droid.org/?q=com.simplytranslate_mobile) 
 * [SkyTube Extra](https://search.f-droid.org/?q=free.rm.skytube.extra) 
 * [Solar Compass](https://search.f-droid.org/?q=com.agnibho.android.solarcompass) 
 * [Solunar Periods](https://github.com/forrestguice/SolunarPeriods/releases/tag/v0.2.0) 
 * [Sound Recorder](https://search.f-droid.org/?q=net.micode.soundrecorder) 
 * [SpeedCrunch](https://github.com/mikkosyrja/speedcrunch-android/releases/tag/0.4.2) 
 * [Stellarium](https://search.f-droid.org/?q=com.noctuasoftware.stellarium_free) 
-* [Stopwatch](https://search.f-droid.org/?q=com.keuwl.stopwatch) 
-* [Stopwatch](https://search.f-droid.org/?q=com.kodarkooperativet.notificationstopwatch) 
+* [Stopwatch](https://apkpure.com/search?q=com.keuwl.stopwatch) 
 * [Suntimes](https://search.f-droid.org/?q=com.forrestguice.suntimeswidget) 
 * [Suntimes Calendars](https://search.f-droid.org/?q=com.forrestguice.suntimescalendars) 
 * [SuperFreezZ](https://search.f-droid.org/?q=superfreeze.tool.android) 
+* [TellMeTheTime](https://apkpure.com/search?q=Speaking+Clock%3A+TellMeTheTime+&t=app)
 * [Tic Tac Toe](https://search.f-droid.org/?q=com.earthblood.tictactoe) 
 * [Time Calc](https://search.f-droid.org/?q=com.noxproductions.TimeCalc) 
 * [TimeTable](https://search.f-droid.org/?q=com.asdoi.timetable) 
