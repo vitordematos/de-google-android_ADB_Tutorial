@@ -26,17 +26,17 @@ Success
 ### Lista (comentada) dos 57 *.apk* a desinstalar (.apk que contêm trackers e podem ser substituídos por apps melhores) e de comandos úteis. Ressalva-se que este foi o bloatware que encontrei no meu telefone mas a lista varia consoante o dispositivo e o fabricante.
 
 ```
-  adb devices //inicializa a comunicação com o dispositivo
-  adb --help //ver ajuda sobre todos os comandos adb
-  adb shell pm list permission-groups //ver grupos de permissões do dispositivo
-  adb shell pm list users //listar utilizadores do dispositivo
-  adb shell pm get-install-location //ver onde é que os apk estão a ser instalados
-  adb shell pm list packages // lista todos os apk instalados para o utilizador
-  //comandos para todos os .apk a desinstalar (com alguns comentários). Ao premir ENTER e executar cada comando abaixo, o programa deverá devolver "Sucess":
+  adb devices //initialize communication with the device
+  adb --help //help on all adb commands
+  adb shell pm list permission-groups //view device permission groups
+  adb shell pm list users //list users on the device
+  adb shell pm get-install-location //see where apk is being installed
+  adb shell pm list packages // list all apk installed for the user
+  //commands for all .apk to uninstall (with some comments). Upon pressing ENTER and executing each command below, the program should return "Success":
    adb shell pm uninstall --user 0 com.google.android.onetimeinitializer
-   adb shell pm uninstall --user 0 com.google.android.googlequicksearchbox //o google assist que está sempre à escuta
-   adb shell pm uninstall --user 0 com.google.android.marvin.talkback //o que permite que a google te ouça
-   adb shell pm uninstall --user 0 com.google.android.syncadapters.contacts //envia os teus contactos para a google
+   adb shell pm uninstall --user 0 com.google.android.googlequicksearchbox //the google assistant that's always listening
+   adb shell pm uninstall --user 0 com.google.android.marvin.talkback //the one that lets google listen to you
+   adb shell pm uninstall --user 0 com.google.android.syncadapters.contacts //sends your contacts to google
    adb shell pm uninstall --user 0 com.google.android.apps.messaging
    adb shell pm uninstall --user 0 com.google.android.apps.docs
    adb shell pm uninstall --user 0 com.google.android.gsf.login
@@ -59,17 +59,21 @@ Success
    adb shell pm uninstall --user 0 com.google.android.tts
    adb shell pm uninstall --user 0 com.google.android.configupdater
    adb shell pm uninstall --user 0 com.google.android.partnersetup
-   adb shell pm uninstall --user 0 com.google.android.packageinstaller //!Atenção esta é a app que permite gerir .apks directamente no android. Ver acima como a reinstalar caso necessitemos de gerir apps sem acesso a adb. Não tem trackers pelo que podemos não desinstalar esta!
+   adb shell pm uninstall --user 0 com.google.android.packageinstaller //!Warning this is the app that allows you to manage .apks directly on android. See above how to reinstall it in case we need to manage apps without adb access. It has no trackers so we may not uninstall this one!
    adb shell pm uninstall --user 0 com.google.driveactivator
-   adb shell pm uninstall --user 0 com.android.cellbroadcastreceiver //permite que o governo via isp te envie mensagens de propaganda
+   adb shell pm uninstall --user 0 com.android.cellbroadcastreceiver //allow the government via isp to send you propaganda messages
    adb shell pm uninstall --user 0 com.google.android.backuptransport
    adb shell pm uninstall --user 0 com.android.vending
-   adb shell pm uninstall --user 0 com.amazon.kindle //o que é que isto está a fazer num telefone??
-   adb shell pm uninstall --user 0 com.tripadvisor.tripadvisor //o que é que isto está a fazer num telefone??
-   adb shell pm uninstall --user 0 com.oma.drm //app de censura que te pode impedir de ler conteúdo de ficheiros (não respeita gnu/copyleft e tenta impôr censura escorada no copyright)
-   adb shell pm uninstall --user 0 com.asus.dm //tenta fazer download do sistema (+-2GB) de cada vez que ligas os dados: assemelha-se a um ataque DDOS
+   adb shell pm uninstall --user 0 com.amazon.kindle //what is this doing on a phone?
+   adb shell pm uninstall --user 0 com.tripadvisor.tripadvisor //what is this doing on a phone?
+   adb shell pm uninstall --user 0 com.oma.drm //Censorship app which may prevent you from reading file content (not gnu/copyleft compliant and tries to impose copyright censorship)
+   adb shell pm uninstall --user 0 com.asus.dm //tries to download system updates (+-2GB) every time you enable a data connections: resembles a DDOS attack
    adb shell pm uninstall --user 0 com.ironsource.appcloud.oobe.asus
    adb shell pm uninstall --user 0 com.asus.ia.asusapp
+   adb shell pm uninstall --user 0 com.asus.livedemo
+   adb shell pm uninstall --user 0 com.asus.livedemoservice
+   adb shell pm uninstall --user 0 com.asus.launcher
+   adb shell pm uninstall --user 0 com.asus.server.azs
    adb shell pm uninstall --user 0 com.asus.weathertime
    adb shell pm uninstall --user 0 com.asus.gallery
    adb shell pm uninstall --user 0 com.asus.flashlight
@@ -80,18 +84,18 @@ Success
    adb shell pm uninstall --user 0 com.asus.filemanager
    adb shell pm uninstall --user 0 com.asus.soundrecorder
    adb shell pm uninstall --user 0 com.asus.ime //zenUI keyboard
-   adb shell pm uninstall --user 0 com.asus.keyboard //zenUI keyboard   
+   adb shell pm uninstall --user 0 com.asus.keyboard //zenUI keyboard 
    adb shell pm uninstall --user 0 com.asus.as //asus analytics
    adb shell pm uninstall --user 0 com.asus.contacts.theme.dark
-   adb shell pm uninstall --user 0 com.asus.contacts //permite gerir contactos SIM (útil se tivermos de usar um dumbphone) mas torna o nosso .vcf de contactos praticamente inutilizável fazendo *merges* que escondem os contactos duplicados (e há apps alternativas para isso)
-   adb shell pm uninstall --user 0 com.asus.asusincallui //faz um hi-jacking do dialer
+   adb shell pm uninstall --user 0 com.asus.contacts //allows you to manage SIM contacts (useful if you have to use a dumbphone) but makes your .vcf contacts almost unusable by making *merges* that hide duplicate contacts (and there are alternative apps for managing SIM contacts)
+   adb shell pm uninstall --user 0 com.asus.asusincallui //hi-jacks the dialer app
    adb shell pm uninstall --user 0 com.asus.camera
    adb shell pm uninstall --user 0 com.asus.deskclock
    adb shell pm uninstall --user 0 com.asus.systemupdate
    adb shell pm uninstall --user 0 com.asus.zentalk
-   adb shell pm uninstall --user 0 com.qualcomm.location.XT //para usares o gps precisas só de com.qualcomm.location essa XT fica sempre em excução mesmo dentro de edifícios mapeando o sítio onde te encontras e permitindo a triangulação além disso de cada vez que inicias o gps ela pede permissão para te chatear até que digas que sim (dark design pattern)
-  adb shell pm trim-caches //apagar a cache das aplicações
-  adb shell pm reboot //reiniciar o dispositivo
+   adb shell pm uninstall --user 0 com.qualcomm.location.XT //to use gps you only need com.qualcomm.location not the XT that keeps running even inside buildings mapping where you are and allowing triangulation plus every time you start gps it asks permission yhus nagging you until you say yes (dark design pattern)
+  adb shell pm trim-caches //delete all applications cache
+  adb shell pm reboot //restart the device
 
 ```
 
@@ -101,8 +105,6 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 
 * [Activity Launcher](https://search.f-droid.org/?q=de.szalkowski.activitylauncher) 
 * [AF Weather](https://search.f-droid.org/?q=net.gitsaibot.af) 
-* [Anstop](https://search.f-droid.org/?q=An.stop) 
-* [APK Explorer & Editor](https://search.f-droid.org/?q=com.apk.editor) 
 * [APK Export](https://apkpure.com/search?q=com.ses.app.apkexport) 
 * [App Lock](https://search.f-droid.org/?q=io.github.subhamtyagi.privacyapplock) 
 * [App Manager](https://search.f-droid.org/?q=io.github.muntashirakon.AppManager) 
@@ -111,6 +113,7 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Auto Off Bluetooth](https://search.f-droid.org/?q=com.mystro256.autooffbluetooth) 
 * [BatteryBot Pro](https://search.f-droid.org/?q=com.darshancomputing.BatteryIndicatorPro) 
 * [BikeComputer](https://search.f-droid.org/?q=de.nulide.bikecomputer) 
+* [Birthday Adapter](https://search.f-droid.org/?q=org.birthdayadapter) 
 * [Birthday Buddy](https://search.f-droid.org/?q=com.procrastimax.birthdaybuddy) 
 * [BirthDayDroid](https://search.f-droid.org/?q=com.tmendes.birthdaydroid) 
 * [Blacklist Blocker](https://search.f-droid.org/?q=com.kaliturin.blacklist) 
@@ -129,6 +132,7 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Clear List](https://search.f-droid.org/?q=douzifly.list) 
 * [Clima](https://search.f-droid.org/?q=co.prestosole.clima) 
 * [ClipboardCleaner](https://search.f-droid.org/?q=io.github.deweyreed.clipboardcleaner) 
+* [Clock](https://search.f-droid.org/?q=com.best.deskclock) 
 * [Contacts](https://search.f-droid.org/?q=com.simplemobiletools.contacts.pro) 
 * [Contacts On Desktop](https://search.f-droid.org/?q=mofo22.tools.contactsondesktop) 
 * [Countdown for DashClock](https://search.f-droid.org/?q=com.cr5315.cfdc) 
@@ -143,7 +147,6 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [DAVx⁵](https://search.f-droid.org/?q=at.bitfire.davdroid) 
 * [dawdle](https://search.f-droid.org/?q=godau.fynn.moodledirect) 
 * [Dialer](https://search.f-droid.org/?q=com.simplemobiletools.dialer) 
-* [Dicionário Priberam](https://apkpure.com/search?q=pt.priberam.dicionariolinguaportuguesa) 
 * [Disable Manager](https://search.f-droid.org/?q=com.nagopy.android.disablemanager2) 
 * [DroidFish](https://search.f-droid.org/?q=org.petero.droidfish) 
 * [Dumbphone Assistant](https://search.f-droid.org/?q=com.github.yeriomin.dumbphoneassistant) 
@@ -160,11 +163,7 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Foxy Droid](https://search.f-droid.org/?q=nya.kitsunyan.foxydroid) 
 * [Fritter](https://search.f-droid.org/?q=com.jonjomckay.fritter) 
 * [GCompris](https://search.f-droid.org/?q=net.gcompris.full) 
-* [Ghost Commander](https://search.f-droid.org/?q=com.ghostsq.commander) 
-* [Ghost Commander - SFTP plugin (new)](https://search.f-droid.org/?q=com.ghostsq.commander.sftp) 
-* [Ghost Commander - SMB plugin](https://search.f-droid.org/?q=com.ghostsq.commander.smb) 
 * [Hacker's Keyboard](https://search.f-droid.org/?q=org.pocketworkstation.pckeyboard) 
-* [Hourly Reminder](https://search.f-droid.org/?q=com.github.axet.hourlyreminder) 
 * [Identiconizer!](https://search.f-droid.org/?q=com.germainz.identiconizer) 
 * [JABtalk](https://apt.izzysoft.de/fdroid/index/apk/com.jabstone.jabtalk.basic) 
 * [KDE Connect](https://search.f-droid.org/?q=org.kde.kdeconnect_tp) 
@@ -175,6 +174,7 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [LastCaller](https://search.f-droid.org/?q=com.dwak.lastcall) 
 * [Lawnchair](https://search.f-droid.org/?q=ch.deletescape.lawnchair.plah) 
 * [LibGen](https://search.f-droid.org/?q=com.manuelvargastapia.libgen) 
+* [LibreOffice Viewer](https://search.f-droid.org/?q=org.documentfoundation.libreoffice) 
 * [Librera PRO](https://search.f-droid.org/?q=com.foobnix.pro.pdf.reader) 
 * [List My Apps](https://search.f-droid.org/?q=de.onyxbits.listmyapps) 
 * [Lockeye](https://apkpure.com/search?q=com.tafayor.lockeye2) 
@@ -219,6 +219,7 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [RHVoice](https://search.f-droid.org/?q=com.github.olga_yakovleva.rhvoice.android) 
 * [Rule of Three](https://search.f-droid.org/?q=de.steinpfeffer.rdt) 
 * [RxDroid](https://search.f-droid.org/?q=at.jclehner.rxdroid) 
+* [Scarlet FDroid](https://search.f-droid.org/?q=com.bijoysingh.quicknote) 
 * [ScreenCam](https://search.f-droid.org/?q=com.orpheusdroid.screenrecorder) 
 * [Screenshot Blocker](https://apkpure.com/search?q=com.tafayor.screenshotblocker) 
 * [SecScanQR](https://search.f-droid.org/?q=de.t_dankworth.secscanqr) 
@@ -227,17 +228,18 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Shortcuts for Calendar/Contacts](https://search.f-droid.org/?q=org.shortcuts) 
 * [Silence](https://search.f-droid.org/?q=org.smssecure.smssecure) 
 * [Simple Keyboard](https://search.f-droid.org/?q=rkr.simplekeyboard.inputmethod) 
+* [SimplyTranslate Mobile ](https://search.f-droid.org/?q=com.simplytranslate_mobile) 
 * [SkyTube Extra](https://search.f-droid.org/?q=free.rm.skytube.extra) 
 * [Solar Compass](https://search.f-droid.org/?q=com.agnibho.android.solarcompass) 
 * [Solunar Periods](https://github.com/forrestguice/SolunarPeriods/releases/tag/v0.2.0) 
 * [Sound Recorder](https://search.f-droid.org/?q=net.micode.soundrecorder) 
 * [SpeedCrunch](https://github.com/mikkosyrja/speedcrunch-android/releases/tag/0.4.2) 
 * [Stellarium](https://search.f-droid.org/?q=com.noctuasoftware.stellarium_free) 
-* [Stopwatch](https://search.f-droid.org/?q=com.keuwl.stopwatch) 
-* [Stopwatch](https://search.f-droid.org/?q=com.kodarkooperativet.notificationstopwatch) 
+* [Stopwatch](https://apkpure.com/search?q=com.keuwl.stopwatch) 
 * [Suntimes](https://search.f-droid.org/?q=com.forrestguice.suntimeswidget) 
 * [Suntimes Calendars](https://search.f-droid.org/?q=com.forrestguice.suntimescalendars) 
 * [SuperFreezZ](https://search.f-droid.org/?q=superfreeze.tool.android) 
+* [TellMeTheTime](https://apkpure.com/search?q=Speaking+Clock%3A+TellMeTheTime+&t=app)
 * [Tic Tac Toe](https://search.f-droid.org/?q=com.earthblood.tictactoe) 
 * [Time Calc](https://search.f-droid.org/?q=com.noxproductions.TimeCalc) 
 * [TimeTable](https://search.f-droid.org/?q=com.asdoi.timetable) 
