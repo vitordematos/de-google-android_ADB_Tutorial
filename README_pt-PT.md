@@ -67,11 +67,14 @@ Success
    adb shell pm uninstall --user 0 com.amazon.kindle //what is this doing on a phone?
    adb shell pm uninstall --user 0 com.tripadvisor.tripadvisor //what is this doing on a phone?
    adb shell pm uninstall --user 0 com.oma.drm //Censorship app which may prevent you from reading file content (not gnu/copyleft compliant and tries to impose copyright censorship)
+   adb shell pm uninstall --user 0 com.qrd.omadownload
    adb shell pm uninstall --user 0 com.asus.dm //tries to download system updates (+-2GB) every time you enable a data connections: resembles a DDOS attack
    adb shell pm uninstall --user 0 com.ironsource.appcloud.oobe.asus
    adb shell pm uninstall --user 0 com.asus.ia.asusapp
    adb shell pm uninstall --user 0 com.asus.livedemo
    adb shell pm uninstall --user 0 com.asus.livedemoservice
+   adb shell pm uninstall --user 0 com.asus.maxxaudio.audiowizard
+   adb shell pm uninstall --user 0 com.asus.maxxaudio
    adb shell pm uninstall --user 0 com.asus.launcher
    adb shell pm uninstall --user 0 com.asus.server.azs
    adb shell pm uninstall --user 0 com.asus.weathertime
@@ -113,6 +116,7 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Auto Off Bluetooth](https://search.f-droid.org/?q=com.mystro256.autooffbluetooth) 
 * [BatteryBot Pro](https://search.f-droid.org/?q=com.darshancomputing.BatteryIndicatorPro) 
 * [BikeComputer](https://search.f-droid.org/?q=de.nulide.bikecomputer) 
+* [Binary Eye](https://search.f-droid.org/?q=de.markusfisch.android.binaryeye)
 * [Birthday Adapter](https://search.f-droid.org/?q=org.birthdayadapter) 
 * [Birthday Buddy](https://search.f-droid.org/?q=com.procrastimax.birthdaybuddy) 
 * [BirthDayDroid](https://search.f-droid.org/?q=com.tmendes.birthdaydroid) 
@@ -223,7 +227,6 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [ScreenCam](https://search.f-droid.org/?q=com.orpheusdroid.screenrecorder) 
 * [Screenshot Blocker](https://apkpure.com/search?q=com.tafayor.screenshotblocker) 
 * [SecScanQR](https://search.f-droid.org/?q=de.t_dankworth.secscanqr) 
-* [Semitone](https://search.f-droid.org/?q=mn.tck.semitone) 
 * [Sentry](https://search.f-droid.org/?q=me.lucky.sentry) 
 * [Shortcuts for Calendar/Contacts](https://search.f-droid.org/?q=org.shortcuts) 
 * [Silence](https://search.f-droid.org/?q=org.smssecure.smssecure) 
@@ -253,6 +256,7 @@ Uma vez removidas as aplicações indesejáveis é preciso substituí-las. Fica 
 * [Wi-Fi Privacy Police](https://search.f-droid.org/?q=be.uhasselt.privacypolice) 
 * [Wi-Fi Widget](https://search.f-droid.org/?q=org.androidappdev.wifiwidget) 
 * [WiFi Warning](https://search.f-droid.org/?q=nu.firetech.android.wifiwarning) 
+* [Xearth](https://search.f-droid.org/?q=de.drhoffmannsoftware.xearth)
 
 List made using [List My Apps](https://search.f-droid.org/?q=de.onyxbits.listmyapps)
 
